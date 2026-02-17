@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritual Whimsy Studio</title>
+  <meta name="description" content="Apps that feel like magic. Makers of Collected: Sticker Chart.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #050507;
+      color: #e8e4f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        #050507;
+    }
+
+    .studio-mark {
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(232, 228, 240, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #e8e4f0 0%, #c4b5fd 50%, #f9a8d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: rgba(232, 228, 240, 0.7);
+      max-width: 480px;
+      margin-bottom: 3rem;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      color: rgba(232, 228, 240, 0.3);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* --- App Section --- */
+    .app-section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .app-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e8e4f0;
+    }
+
+    .app-header .subtitle {
+      font-size: 1rem;
+      color: rgba(232, 228, 240, 0.5);
+      margin-top: 0.25rem;
+    }
+
+    .app-description {
+      font-size: 1.1rem;
+      color: rgba(232, 228, 240, 0.7);
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #e8e4f0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .badge:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .badge svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Screenshots */
+    .screenshots {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      padding: 1rem 0 2rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshots::-webkit-scrollbar { display: none; }
+
+    .screenshots img {
+      width: 220px;
+      height: auto;
+      border-radius: 16px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    /* --- Divider --- */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(232, 228, 240, 0.15);
+      margin: 0 auto;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .socials a {
+      color: rgba(232, 228, 240, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .socials a:hover { color: #e8e4f0; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(232, 228, 240, 0.4);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(232, 228, 240, 0.7); }
+
+    .copyright {
+      color: rgba(232, 228, 240, 0.25);
+      font-size: 0.8rem;
+    }
+
+    /* --- Mobile --- */
+    @media (max-width: 640px) {
+      .app-section { padding: 4rem 1.5rem; }
+      .app-header { flex-direction: column; align-items: flex-start; }
+      .screenshots img { width: 180px; }
+      .app-badges { flex-direction: column; }
+      .badge { justify-content: center; }
+      footer { padding: 3rem 1.5rem; }
+      .footer-links { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="studio-mark">Ritual Whimsy Studio</div>
+    <h1>Apps for<br>everyday magic</h1>
+    <p>We make calm, beautiful tools for people who want a little more delight in their day.</p>
+    <span class="scroll-hint">scroll</span>
+  </section>
+
+  <!-- App: Collected -->
+  <section class="app-section">
+    <div class="app-header">
+      <!-- Replace src with your hosted app icon -->
+      <img class="app-icon" src="images/icon.png" alt="Collected app icon">
+      <div>
+        <h2>Collected</h2>
+        <div class="subtitle">Calm Habit Tracker for Adults</div>
+      </div>
+    </div>
+
+    <p class="app-description">
+      A sticker chart app that replaces streaks with something gentler.
+      Track habits, celebrate small wins, and unlock rewards that actually
+      matter to you. No pressure, no shame.
+    </p>
+
+    <div class="app-badges">
+      <!-- Replace # with your App Store URL once live -->
+      <a class="badge" href="#" aria-label="Download on the App Store">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+    </div>
+
+    <div class="screenshots">
+      <!-- Replace with your hosted screenshot files -->
+      <img src="images/screenshot-1.png" alt="Home screen">
+      <img src="images/screenshot-2.png" alt="Chart detail">
+      <img src="images/screenshot-3.png" alt="Sticker picker">
+      <img src="images/screenshot-4.png" alt="Achievements">
+      <img src="images/screenshot-5.png" alt="Marketplace">
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="socials">
+      <a href="https://x.com/RitualWhimsyS" target="_blank" rel="noopener">X</a>
+      <a href="https://instagram.com/ritualwhimsystudio" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@ritual.whimsy" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://bsky.app/profile/ritual-whimsy.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+    </div>
+
+    <div class="footer-links">
+      <a href="mailto:ritualwhimsystudio@gmail.com">Contact</a>
+      <a href="/collected/privacy.html">Privacy Policy</a>
+      <a href="/collected/support.html">Support</a>
+    </div>
+
+    <div class="copyright">&copy; 2026 Alyssa Wei</div>
+  </footer>
+
+</body>
+</html>
