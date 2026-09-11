@@ -43,7 +43,7 @@
     <h2>Data Collection</h2>
 
     <h3>Free Tier (Local-Only Mode)</h3>
-    <p>When using the App without an account, all data is stored locally on your device. We do not collect, transmit, or store any personal information on external servers. Your charts, stickers, rewards, and settings remain entirely on your device.</p>
+    <p>When using the App without an account, your charts, stickers, rewards, and settings remain entirely on your device. The App may send limited crash and performance diagnostics as described below.</p>
     <p>We do not collect:</p>
     <ul>
       <li>Personal information (name, email, phone number)</li>
@@ -55,7 +55,7 @@
     <h3>Premium Tier (Account & Cloud Sync)</h3>
     <p>If you purchase the premium upgrade and choose to create an account:</p>
     <ul>
-      <li><strong>Authentication:</strong> We use Apple Sign In to authenticate your account. We receive your Apple-provided user identifier and, only if you choose to share it, your name and email address.</li>
+      <li><strong>Authentication:</strong> We use Sign in with Apple to authenticate your account. We store the Apple-provided account identifier and, when Apple provides it, your email address. Collected does not store your name.</li>
       <li><strong>Cloud Sync:</strong> The app data needed for sync—including charts, stickers, chart-specific rewards, reward and completion history, favorites, and purchase access records—is synced to our cloud service powered by Supabase to enable backup and multi-device sync. This data is stored securely and is associated with your account.</li>
       <li><strong>No additional tracking:</strong> Even with an account, we do not collect analytics, behavioral data, or advertising identifiers.</li>
     </ul>
@@ -63,8 +63,8 @@
     <h2>Product Catalog</h2>
     <p>The App fetches sticker pack information (names, images, prices) from our servers to display available content. This does not involve any personal data collection—it is simply retrieving the product catalog. Downloaded sticker images are cached locally on your device for offline use.</p>
 
-    <h2>Crash Reporting</h2>
-    <p>The App may collect anonymous crash reports to help us identify and fix bugs. Crash reports do not contain personally identifiable information.</p>
+    <h2>Crash and Performance Reporting</h2>
+    <p>Collected uses Sentry to receive limited crash and performance diagnostics. These reports may include stack traces, app and operating-system versions, device characteristics, launch and performance measurements, and a pseudonymous device identifier. Collected does not send tap history, screen-navigation history, console logs, or network-request history to Sentry. This information is used only to diagnose technical problems and improve reliability. It is not used for advertising, tracking, or behavioral analytics.</p>
 
     <h2>In-App Purchases</h2>
     <p>Purchases are processed entirely by Apple through the App Store. We do not collect or store any payment information.</p>
@@ -74,6 +74,7 @@
       <li><strong>Apple Sign In:</strong> Used for account authentication (premium tier only). Subject to <a href="https://www.apple.com/privacy/">Apple's Privacy Policy</a>.</li>
       <li><strong>Supabase:</strong> Used for cloud data storage and sync (premium tier only). Subject to <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a>.</li>
       <li><strong>RevenueCat:</strong> Used to manage in-app purchases. Subject to <a href="https://www.revenuecat.com/privacy/">RevenueCat's Privacy Policy</a>.</li>
+      <li><strong>Sentry:</strong> Used for limited crash, hang, and performance diagnostics. Automatic interaction and navigation breadcrumbs are disabled. Subject to <a href="https://sentry.io/privacy/">Sentry's Privacy Policy</a>.</li>
     </ul>
 
     <h2>Data Retention & Deletion</h2>
